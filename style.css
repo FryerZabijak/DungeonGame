@@ -1,0 +1,171 @@
+body {
+background-color: rgb(195, 195, 195);
+scroll-behavior: smooth;
+font-family: "Montserrat";
+font-weight: 800;
+}
+#mistnostPocet {
+    font-size: 82px;
+    position:absolute;
+}
+#obrazek {
+    display:block;
+    margin:0 auto;
+    border:10px solid black;
+}
+
+#tlacitka {
+    text-align: center;
+}
+#tlacitka button {
+    font-size: 48px;
+    margin:0 15px;
+    display:inline-block;
+    width:160px;
+}
+
+#sebrat {
+    background-color: rgb(113, 187, 255);
+}
+
+#kopat {
+    background-color: rgb(255, 255, 255);
+}
+
+#zabit {
+    background-color: rgb(255, 88, 88);
+}
+#ukazatele {
+    text-shadow: 3px 3px 10px black;
+    font-weight: 1000;
+}
+#ukazatele img {
+    width:100px;
+}
+
+#ukazatele ul li {
+    display:inline-block;
+    columns:3;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+#ukazatele #penize {
+    position:absolute;
+    top:800px;
+    left:47%;
+}
+#ukazetele #energie {
+    position:absolute;
+    top:800px;
+    right: 50%;
+}
+#ukazatele #zivoty {
+    position:absolute;
+    top:800px;
+    left:85%;
+}
+
+#penize {
+    font-size:72px;
+    color:rgb(0, 181, 0);
+}
+
+#energie {
+    font-size:72px;
+    color:rgb(255, 255, 0);
+}
+
+#zivoty {
+    font-size:72px;
+    color:rgb(255, 56, 56);
+}
+
+
+
+#obchod {
+text-align: center;
+text-shadow: 5px 5px 25px black;
+}
+
+#obchod ul {
+    display:inline;
+    list-style-type: none;
+    font-size: 52px;
+    text-align: left;
+}
+
+#obchod ul li {
+    position:relative;
+    text-align: center;
+}
+
+#obchod ul li button {
+    font-size: 38px;
+    width: 450px;
+    margin:0 100px;
+    position:relative;
+    box-shadow: 0 0 50px rgb(255, 255, 255);
+    font-family: "Montserrat";
+    font-weight: 500;
+    border-radius: 0.25em;
+}
+
+#obchod #jidlo {
+    color: rgb(65, 255, 65);
+}
+#obchod #jidlo button {
+    background-color: rgb(65, 255, 65);
+}
+
+#obchod #lekarnicka {
+    color:rgb(255, 57, 57);
+}
+#obchod #lekarnicka button {
+    background-color:rgb(255, 57, 57);
+}
+
+#obchod #viceEnergie {
+    color:rgb(255, 255, 129);
+}
+
+#obchod #viceEnergie button {
+    background-color:rgb(255, 255, 129);
+}
+
+#obchod #viceZivotu {
+    color:rgb(255, 149, 69);
+}
+
+#obchod #viceZivotu button {
+    background-color:rgb(255, 149, 69);
+}
+
+#obchod #polovinaEnergie {
+    color:rgb(205, 255, 69);
+}
+#obchod #polovinaEnergie button{
+    background-color:rgb(205, 255, 69);
+}
+
+#obchod #vicePenez {
+    color:rgb(38, 174, 0);
+}
+
+#obchod #vicePenez button {
+    background-color:rgb(38, 174, 0);
+}
+
+#obchod #upozornitZombie {
+    color:rgb(183, 28, 0);
+}
+#obchod #upozornitZombie button {
+    background-color:rgb(183, 28, 0);
+}
+
+#obchod #upozornitDia {
+    color: aqua;
+}
+#obchod #upozornitDia Button {
+    background-color: aqua;
+}

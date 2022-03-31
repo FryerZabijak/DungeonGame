@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Top Hra od Pepy</title>
+</head>
+<body>
+    <label id="mistnostPocet">Místnost č.1</label>
+    <img src="kopat.png" alt="kopej" id="obrazek"><br>
+
+<div id="tlacitka">
+    <button id="sebrat">Sebrat</button>
+    <button id="kopat">Kopat</button>
+    <button id="zabit">Zabít</button>
+</div>
+
+<div id="ukazatele">
+<ul>
+    <li><div id="penize"><img src="penize.png" src="money"><label id="penizeLabel">0</label></div></li>
+    <li><div id="energie"><img src="energie.png" src="energie"><label id="energieLabel">100</label></div></li>
+    <li><div id="zivoty"><img src="hp.png" src="zivoty"><label id="zivotyLabel">100</label></div></li>
+</ul>
+</div>
+
+<div id="obchod">
+    <ul>
+        <li id="jidlo">Jídlo<button id="koupitJidlo">Koupit Jídlo</button>$100</li>
+        <li id="lekarnicka">Lékarnička<button id="koupitLekarnicku">Koupit Lékarničku</button>$200</li>
+        <li id="viceEnergie">+50 Energie<button id="koupitViceEnergie">Koupit Více Energie</button>$500</li>
+        <li id="viceZivotu">+50 Životů<button id="koupitViceZivotu">Koupit Více životů</button>$750</li>
+        <li id="polovinaEnergie">Poloviční Energie<button id="koupitPolovinaEnergie">Koupit Lepší Spotřebu</button>$1000</li>
+        <li id="vicePenez">+$50 Za Diamant<button id="koupitVicePenez">Koupit Více Peněz</button>$2000</li>
+        <li id="upozornitZombie">Upozornit na Zombie<button id="koupitUpozorneniZombie">Koupit Upozornění</button>$3000</li>
+        <li id="upozornitDia">Upozornit na Diamanty<button id="koupitUpozorneniDia">Koupit Upozornění</button>$4000</li>
+    </ul>
+</div>
+    <script src="index.js"></script>
+</body>
+</html>
