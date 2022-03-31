@@ -239,7 +239,7 @@ function Koupeno() {
 
 function HudbaDoPozadi() {
     const audio = document.getElementById("HudbaDoPozadi"); 
-    audio.volume=0.2;
+    audio.volume=1;
     audio.play();
     audio.addEventListener('ended', function() {
         this.currentTime = 0;
