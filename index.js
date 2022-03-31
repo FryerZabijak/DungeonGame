@@ -238,8 +238,7 @@ function Koupeno() {
 }
 
 function HudbaDoPozadi() {
-    new Audio("HudbaDoPozadi.mp3");
-    const audio = document.getElementById("HudbaDoPozadi"); 
+    new audio("HudbaDoPozadi.mp3");
     audio.volume=1;
     audio.play();
     audio.addEventListener('ended', function() {
