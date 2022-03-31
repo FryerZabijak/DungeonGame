@@ -1,7 +1,7 @@
 //1 - 5 KOPAT
 //6 - ZABÍT
 //7 - SEBRAT
-HudbaDoPozadi();
+
 let projetychMistnosti = 1;
 let vydelanychPenez=0;
 
@@ -17,6 +17,8 @@ let maxEnergie=100;
 let maxZivoty=100;
 let upozorneniZombie = false;
 let upozorneniDia = false;
+
+HudbaDoPozadi();
 
 AktualizujStaty();
 mistnost=AktualizujMistnost();
