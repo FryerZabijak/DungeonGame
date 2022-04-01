@@ -18,8 +18,6 @@ let maxZivoty=100;
 let upozorneniZombie = false;
 let upozorneniDia = false;
 
-HudbaDoPozadi();
-
 AktualizujStaty();
 mistnost=AktualizujMistnost();
 
@@ -235,16 +233,6 @@ function Koupeno() {
     let audio = new Audio("Pokladna.mp3");
     audio.volume=0.6;
     audio.play();
-}
-
-function HudbaDoPozadi() {
-    new audio("HudbaDoPozadi.mp3");
-    audio.volume=1;
-    audio.play();
-    audio.addEventListener('ended', function() {
-        this.currentTime = 0;
-        this.play();
-    }, false);
 }
 
 function Konec() {
