@@ -38,7 +38,7 @@ document.getElementById("mobil").onclick = function() {
     document.getElementById("styl").href="style2.css";
     document.getElementById("koupitJidloLabel").innerHTML = "Jídlo";
     document.getElementById("koupitLekarnickuLabel").innerHTML = "Lékarnička";
-    document.getElementById("koupitTravuLabel").innerHTML = "Tráva";
+    document.getElementById("koupitTravuLabel").innerHTML = "weed *CMNG SOON*";
     document.getElementById("koupitViceEnergieLabel").innerHTML = "+50 Energie";
     document.getElementById("koupitViceZivotuLabel").innerHTML = "+1 Život";
     document.getElementById("koupitPolovinaEnergieLabel").innerHTML = "Poloviční spotřeba energie";
@@ -132,7 +132,7 @@ document.getElementById("koupitLekarnicku").onclick = function() {  //KOUPIT LÉ
     }
 }
 
-document.getElementById("koupitTravu").onclick = function() {       //KOUPIT TRÁVU $300
+/*document.getElementById("koupitTravu").onclick = function() {       //KOUPIT TRÁVU $300
     if (penize>=300) {
         penize-=300;
         document.body.style.filter="hue-rotate(180deg)";
@@ -150,7 +150,7 @@ document.getElementById("koupitTravu").onclick = function() {       //KOUPIT TR�
         }, false);
         }
     }
-}
+}*/
 
 document.getElementById("koupitViceEnergie").onclick = function() {  //KOUPIT +50 ENERGIE $500
     if (penize>=500) {
