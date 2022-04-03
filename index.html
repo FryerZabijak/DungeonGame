@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" id="styl">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <title>Top Hra od Pepy</title>
+</head>
+
+<body>
+<div id="dulezitaOtazka">
+    <div id="sedaObrazovka"></div>
+    <img src="MobilNeboPocitac.png" alt="DůležitáOtázka">
+<ul>
+    <li><button id="pocitac">Počítač</button></li>
+    <li><button id="mobil">Mobil</button></li>
+</ul>
+    <label id="varovani"></label>
+</div>
+    <button id="spustitHudbu">▶</button>
+
+    <div id="ukazatele">
+        <ul>
+            <li id="penize">
+                <img src="penize.png" src="money"><label id="penizeLabel">0</label>
+            </li>
+            <li id="energie">
+                <img src="energie.png" src="energie"><label id="energieLabel">100</label>
+            </li>
+            <li id="zivoty">
+                <img src="hp.png" src="zivoty"><label id="zivotyLabel">100</label>
+            </li>
+        </ul>
+    </div>
+
+    <div id="Hra">
+
+
+        <label id="mistnostPocet">Místnost č.1</label>
+        <img src="kopat.png" alt="kopej" id="obrazek"><br>
+
+        <div id="tlacitka">
+            <button id="sebrat">Sebrat</button>
+            <button id="kopat">Kopat</button>
+            <button id="zabit">Zabít</button>
+        </div>
+        <button id="jitDoObchodu">Jít do Obchodu</button>
+
+
+        <div id="divCheaty">
+            <input type="text" id="cheaty">
+            <button id="cheatyButton">Aktivovat</button>
+        </div>
+    </div>
+
+    <button id="vratitSe">Vrátit se do dolu</button>
+    <div id="Obchod">
+        <img src="obchodV2.png" alt="Vuův obchůdek" id="obchudek">
+        <button id="koupitJidlo">$100</button><label id="koupitJidloLabel"></label>
+        <button id="koupitLekarnicku">$200</button><label id="koupitLekarnickuLabel"></label>
+        <button id="koupitTravu">$300</button><label id="koupitTravuLabel"></label>
+        <button id="koupitViceEnergie">$500</button><label id="koupitViceEnergieLabel"></label>
+        <button id="koupitViceZivotu">$750</button><label id="koupitViceZivotuLabel"></label>
+        <button id="koupitPolovinaEnergie">$1000</button><label id="koupitPolovinaEnergieLabel"></label>
+        <button id="koupitVicePenez">$2000</button><label id="koupitVicePenezLabel"></label>
+        <button id="koupitUpozorneniZombie">$3000</button><label id="koupitUpozorneniZombieLabel"></label>
+        <button id="koupitUpozorneniDia">$4000</button><label id="koupitUpozorneniDiaLabel"></label>
+</div>
+        <script src="index.js"></script>
+
+</body>
+
+</html>
