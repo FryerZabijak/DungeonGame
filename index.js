@@ -25,7 +25,7 @@ let hudbaHraje = false;
 
 let alertByl =false;
 let trava=false;
-
+let objevenoJidlo = 0;
 AktualizujStaty();
 mistnost=AktualizujMistnost();
 let prestan=new Audio("HudbaDoPozadi.mp3");
@@ -61,6 +61,10 @@ document.getElementById("kopat").onclick = function() {         //KOPAT
         console.log("Vybral jste \"Kopat\" na \"Diamant\"");
         energie-=spotrebaEnergie*2;
     }
+    else if (mistnost==8) {
+        console.log("Vybral jste \"Kopat\" na \"Jídlo\"");
+        energie-=spotrebaEnergie;
+    }
     AktualizujStaty();
     mistnost=AktualizujMistnost();
     Upozorneni();
@@ -83,7 +87,11 @@ document.getElementById("sebrat").onclick = function() {            //SEBRAT
         console.log("Vybral jste \"Sebrat\" na \"Diamant\"");
         penize+=odmenaZaDia;
         vydelanychPenez+=odmenaZaDia;
-        energie-=spotrebaEnergie;
+        energie-=spotrebaEnergie*0;
+    }
+    else if (mistnost==8) {
+        console.log("Vybral jste \"Sebrat\" na \"Jídlo\"");
+        energie=maxEnergie;
     }
     AktualizujStaty();
     mistnost=AktualizujMistnost();
@@ -101,10 +109,22 @@ document.getElementById("zabit").onclick = function() {             //ZABÍT
     else if (mistnost==6) {
         console.log("Vybral jste \"Zabít\" na \"Zombie\"");
         energie-=spotrebaEnergie*2;
+        var randomCislo=Math.floor((Math.random()*2)+1);
+        console.log(randomCislo);
+        if (randomCislo==2) {
+            let penizeUZombika = Math.floor((Math.random()*15)+1);
+            penize+=penizeUZombika;
+            vydelanychPenez+=penizeUZombika;
+            console.log("Zabil jste zombíka, který u sebe měl $"+penizeUZombika);
+        }
     }
     else if (mistnost==7) {
         console.log("Vybral jste \"Zabít\" na \"Diamant\"");
         energie-=spotrebaEnergie*4;
+    }
+    else if (mistnost==8) {
+        console.log("Vybral jste \"Zabít\" na \"Jídlo\"");
+        energie-=spotrebaEnergie;
     }
     AktualizujStaty();
     mistnost=AktualizujMistnost();
@@ -287,6 +307,14 @@ function AktualizujMistnost() {
     console.log("\n\n\nDalší TAH");
     mistnost=Math.floor(Math.random()*7)+1;
     let hlavniObrazek = document.getElementById("obrazek");
+
+    if (energie<=15 && penize<100 && objevenoJidlo<2) {
+        mistnost=8;
+        console.log("Objevilo se jídlo.")
+        hlavniObrazek.src="/sebratJidlo.png";
+        objevenoJidlo+=1;
+    }
+
     console.log("Program vygeneroval místnost č."+mistnost);
     if (mistnost<=5) {
         hlavniObrazek.src="/kopat.png";
@@ -306,6 +334,7 @@ function AktualizujMistnost() {
         }
         console.log("Objevil se Diamant");
     }
+
     return mistnost;
 }
 
