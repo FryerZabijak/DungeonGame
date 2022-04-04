@@ -26,9 +26,110 @@ let hudbaHraje = false;
 let alertByl =false;
 let trava=false;
 let objevenoJidlo = 0;
+let cenaZaViceEnergie = 500;
 AktualizujStaty();
 mistnost=AktualizujMistnost();
 let prestan=new Audio("HudbaDoPozadi.mp3");
+
+
+let savyZobrazeny=false;
+document.getElementById("savy").style.display="none";
+document.getElementById("saveDisketa").onclick = function() {
+    let saveDiv = document.getElementById("savy");
+    if (savyZobrazeny==false) {
+        saveDiv.style.display = "block";
+        savyZobrazeny=true;
+    }
+    else if (savyZobrazeny==true) {
+        saveDiv.style.display = "none";
+        savyZobrazeny=false;
+    }
+}
+
+document.getElementById("ulozit").onclick = function() {
+    console.log("ukládají se údaje...");
+    localStorage.setItem("projetychMistnosti",Number(projetychMistnosti));
+    localStorage.setItem("vydelanychPenez",Number(vydelanychPenez));
+    localStorage.setItem("mistnost",Number(mistnost));
+    localStorage.setItem("zivoty",Number(zivoty));
+    localStorage.setItem("energie",Number(energie));
+    localStorage.setItem("penize",Number(penize));
+    localStorage.setItem("odmenaZaDia",Number(odmenaZaDia));
+    localStorage.setItem("spotrebaEnergie",Number(spotrebaEnergie));
+    localStorage.setItem("polovicniSpotreba",Boolean(polovicniSpotreba));
+    localStorage.setItem("maxEnergie",Number(maxEnergie));
+    localStorage.setItem("maxZivoty",Number(maxZivoty));
+    localStorage.setItem("upozorneniZombie",Boolean(upozorneniZombie));
+    localStorage.setItem("upozorneniDia",Boolean(upozorneniDia));
+    localStorage.setItem("alertByl",Boolean(alertByl));
+    localStorage.setItem("trava",Boolean(trava));
+    localStorage.setItem("objevenoJidlo",Boolean(objevenoJidlo));
+    localStorage.setItem("cenaZaViceEnergie",Number(cenaZaViceEnergie));
+    console.log("Údaje byly uloženy.");
+}
+
+document.getElementById("nahrat").onclick = function() {
+    console.log("Načítá se save...");
+    projetychMistnosti=Number(localStorage.getItem("projetychMistnosti"));
+    vydelanychPenez=Number(localStorage.getItem("vydelanychPenez"));
+    mistnost=Number(localStorage.getItem("mistnost"));
+    zivoty=Number(localStorage.getItem("zivoty"));
+    energie=Number(localStorage.getItem("energie"));
+    penize=Number(localStorage.getItem("penize"));
+    odmenaZaDia=Number(localStorage.getItem("odmenaZaDia"));
+    spotrebaEnergie=Number(localStorage.getItem("spotrebaEnergie"));
+    polovicniSpotreba=Boolean(localStorage.getItem("polovicniSpotreba"));
+    maxEnergie=Number(localStorage.getItem("maxEnergie"));
+    maxZivoty=Number(localStorage.getItem("maxZivoty"));
+    upozorneniZombie=Boolean(localStorage.getItem("upozorneniZombie") == "true");
+    console.log(upozorneniZombie+" bylo načteno");
+    upozorneniDia=Boolean(localStorage.getItem("upozorneniDia")=="true");
+    console.log(upozorneniDia +" bylo načteno");
+    alertByl=Boolean(localStorage.getItem("alertByl")== "true");
+    trava=Boolean(localStorage.getItem("trava")== "true");
+    objevenoJidlo=Boolean(localStorage.getItem("objevenoJidlo")== "true");
+    cenaZaViceEnergie=Number(localStorage.getItem("cenaZaViceEnergie"));
+    document.getElementById("mistnostPocet").innerHTML="Místnost č."+projetychMistnosti;
+    if (trava==true) {
+        prestan.pause();
+        prestan=new Audio("TravaHudbaLepsi.mp3");
+    }
+    console.log("Save byl načat");
+    AktualizujStaty();
+}
+
+document.getElementById("restart").onclick = function() {
+projetychMistnosti = 1;
+vydelanychPenez=0;
+
+mistnost = 1;
+zivoty = 2;
+energie = 100;
+penize = 50;
+
+odmenaZaDia=50;
+spotrebaEnergie=5;
+polovicniSpotreba = false;
+maxEnergie=100;
+maxZivoty=2;
+upozorneniZombie = false;
+upozorneniDia = false;
+
+pauza = true;
+hudbaHraje = false;
+
+alertByl =false;
+trava=false;
+objevenoJidlo = 0;
+cenaZaViceEnergie = 500;
+document.getElementById("mistnostPocet").innerHTML = "Místnost č."+mistnost;
+AktualizujStaty();
+AktualizujMistnost();
+prestan.pause();
+prestan=currentTime=0;
+prestan = new Audio("HudbaDoPozadi.mp3");
+if (pauza==false) prestan.play();
+}
 
 document.getElementById("pocitac").onclick = function() {
     document.getElementById("dulezitaOtazka").style.display="none";
@@ -86,12 +187,15 @@ document.getElementById("sebrat").onclick = function() {            //SEBRAT
     else if (mistnost==7) {
         console.log("Vybral jste \"Sebrat\" na \"Diamant\"");
         penize+=odmenaZaDia;
+        if (trava==true) {
+            penize+=10;
+        }
         vydelanychPenez+=odmenaZaDia;
         energie-=spotrebaEnergie*0;
     }
     else if (mistnost==8) {
         console.log("Vybral jste \"Sebrat\" na \"Jídlo\"");
-        energie=maxEnergie;
+        energie=100;
     }
     AktualizujStaty();
     mistnost=AktualizujMistnost();
@@ -135,9 +239,10 @@ document.getElementById("zabit").onclick = function() {             //ZABÍT
 }
 
 document.getElementById("koupitJidlo").onclick = function() {       //KOUPIT JÍDLO $100
-    if (penize>=100) {
+    if (penize>=100 && energie!=maxEnergie) {
         penize-=100;
-        energie=maxEnergie;
+        energie+=100;
+        if(energie>=maxEnergie) energie=maxEnergie;
         AktualizujStaty();
         Koupeno();
     }
@@ -159,7 +264,7 @@ document.getElementById("koupitTravu").onclick = function() {       //KOUPIT TR�
         AktualizujStaty();
         Koupeno();
         prestan.pause();
-        prestan = new Audio("TravaHudba.mp3");
+        prestan = new Audio("TravaHudbaLepsi.mp3");
         if (pauza!=true) {
         prestan.play();
         prestan.volume=0.4;
@@ -172,8 +277,9 @@ document.getElementById("koupitTravu").onclick = function() {       //KOUPIT TR�
 }
 
 document.getElementById("koupitViceEnergie").onclick = function() {  //KOUPIT +50 ENERGIE $500
-    if (penize>=500) {
-        penize-=500;
+    if (penize>=cenaZaViceEnergie) {
+        penize-=cenaZaViceEnergie;
+        cenaZaViceEnergie+=250;
         maxEnergie+=50;
         energie=maxEnergie;
         AktualizujStaty();
@@ -263,11 +369,13 @@ document.getElementById("cheatyButton").onclick = function() {
 }
 
 document.getElementById("jitDoObchodu").onclick = function() {
-    if (trava!=true) {prestan.pause(); prestan = new Audio("hudbaObchod.mp3"); prestan.currentTime=0;}
+    if (trava!=true) {prestan.pause(); prestan = new Audio("hudbaObchodLepsi.mp3"); prestan.currentTime=0; prestan.volume=0.6}
     document.body.style.backgroundColor="#EBC09B";
     document.getElementById("Hra").style.display = "none";
     document.getElementById("Obchod").style.display = "block";
     document.getElementById("vratitSe").style.display="Block";
+    document.getElementById("savy").style.display="none";
+    savyZobrazeny=false;
     document.body.backgroundColor="#EBC09B";
     if (pauza!=true && trava!=true) {
     prestan.play();
@@ -311,31 +419,47 @@ function AktualizujMistnost() {
     if (energie<=15 && penize<100 && objevenoJidlo<2) {
         mistnost=8;
         console.log("Objevilo se jídlo.")
-        hlavniObrazek.src="/sebratJidlo.png";
+        hlavniObrazek.src="/Nová Grafika/Maso_01.png";
         objevenoJidlo+=1;
     }
-
+    var randomCislo = VygenerujRandomCislo(3);
     console.log("Program vygeneroval místnost č."+mistnost);
     if (mistnost<=5) {
-        hlavniObrazek.src="/kopat.png";
+
+        if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/PrázdnáMístnost_01.png";
+        else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/PrázdnáMístnost_02.png";
+        else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/PrázdnáMístnost_03.png";
         console.log("Objevila se prázdná místnost");
     }
     else if (mistnost==6) {
-        hlavniObrazek.src="/zabit.png";
+        if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/Zombie_01.png";
+        else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/Zombie_02.png";
+        else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/Zombie_03.png";
         if(trava==true) {
-            hlavniObrazek.src="/zabitZhulenec.png";
+            if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/ZombieTráva_01.png";
+            else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/ZombieTráva_02.png";
+            else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/ZombieTráva_03.png";
         }
         console.log("Objevil se Zombie");
     }
     else if (mistnost==7){
-        hlavniObrazek.src="/sebrat.png";
+        if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/Diamant_01.png";
+        else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/Diamant_02.png";
+        else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/Diamant_03.png";
         if(trava==true) {
-            hlavniObrazek.src="/sebratZhulenec.png";
+            if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/DiamantTráva_01.png";
+            else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/DiamantTráva_02.png";
+            else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/DiamantTráva_03.png";
         }
         console.log("Objevil se Diamant");
     }
 
     return mistnost;
+}
+
+function VygenerujRandomCislo(DoKolika) {
+    GenerujRandomCislo = Math.floor((Math.random()*DoKolika)+1);
+    return GenerujRandomCislo;
 }
 
 function KontrolaStatu() {

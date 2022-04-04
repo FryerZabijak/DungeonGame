@@ -6,6 +6,34 @@ background-color: rgb(195, 195, 195);
 font-family: "Montserrat";
 font-weight: 800;
 }
+#saveDisketa {
+    margin-top:100px;
+    position:absolute;
+    left:25px;
+}
+#savy {
+    position:absolute;
+    top:240px;
+}
+#savy button {
+    font-size: 28px;    
+    border:3px solid black;
+    font-weight: 600;
+    display:inline-block;
+    width:115px;
+    text-align: center;
+}
+#savy #ulozit {
+    background-color: rgb(47, 255, 57);
+    left:25px;
+}
+#savy #nahrat {
+    background-color: yellow;
+}
+#savy #restart {
+    background-color: orange;
+}
+
 #spustitHudbu {
     position:absolute;
     z-index: 1;
