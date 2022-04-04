@@ -1,6 +1,8 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
 background-color: rgb(195, 195, 195);
-scroll-behavior: smooth;
 font-family: "Montserrat";
 font-weight: 800;
 }
@@ -25,17 +27,25 @@ font-weight: 800;
 }
 #dulezitaOtazka #pocitac {
     background-color: rgb(68, 216, 0);
-    top:40%;
-    left:40%;
 }
 #dulezitaOtazka #mobil {
     background-color: red;
+}
+#dulezitaOtazka ul li {
+    list-style-type: none; 
+    display:inline;
+    position:absolute;
     top:40%;
-    left:52%;
+    left:50%;
+}
+#dulezitaOtazka ul li #pocitac {
+    position:absolute;
+    right:45%;
+    z-index: 10;
 }
 #dulezitaOtazka #sedaObrazovka {
     width: 100%;
-    height: 100%;
+    height: 110%;
     top:0;
     left: 0;
     background-color: rgba(80, 80, 80, 0.788);
@@ -73,8 +83,11 @@ z-index: 6;
 #mistnostPocet {
     font-size: 82px;
     position:absolute;
+    color:rgb(46, 46, 46);
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
 }
 #obrazek {
+    width:25%;
     display:block;
     margin:0 auto;
     border:10px solid black;
@@ -115,7 +128,7 @@ z-index: 6;
     font-family: "Montserrat";
     font-weight: 500;
     position:absolute;
-    bottom:0px;
+    bottom:10px;
     pointer-events: none;
 }
 
@@ -147,95 +160,6 @@ z-index: 6;
     color:rgb(255, 56, 56);
 }
 
-
-
-#obchod {
-text-align: center;
-text-shadow: 5px 5px 25px black;
-}
-
-#obchod ul {
-    display:inline;
-    list-style-type: none;
-    font-size: 52px;
-    text-align: left;
-}
-
-#obchod ul li {
-    position:relative;
-    text-align: center;
-}
-
-#obchod ul li button {
-    font-size: 38px;
-    width: 450px;
-    margin:0 100px;
-    position:relative;
-    box-shadow: 0 0 50px rgb(255, 255, 255);
-    font-family: "Montserrat";
-    font-weight: 500;
-    border-radius: 0.25em;
-}
-
-#obchod #jidlo {
-    color: rgb(65, 255, 65);
-}
-#obchod #jidlo button {
-    background-color: rgb(65, 255, 65);
-}
-
-#obchod #lekarnicka {
-    color:rgb(255, 57, 57);
-}
-#obchod #lekarnicka button {
-    background-color:rgb(255, 57, 57);
-}
-
-#obchod #viceEnergie {
-    color:rgb(255, 255, 129);
-}
-
-#obchod #viceEnergie button {
-    background-color:rgb(255, 255, 129);
-}
-
-#obchod #viceZivotu {
-    color:rgb(255, 149, 69);
-}
-
-#obchod #viceZivotu button {
-    background-color:rgb(255, 149, 69);
-}
-
-#obchod #polovinaEnergie {
-    color:rgb(205, 255, 69);
-}
-#obchod #polovinaEnergie button{
-    background-color:rgb(205, 255, 69);
-}
-
-#obchod #vicePenez {
-    color:rgb(38, 174, 0);
-}
-
-#obchod #vicePenez button {
-    background-color:rgb(38, 174, 0);
-}
-
-#obchod #upozornitZombie {
-    color:rgb(183, 28, 0);
-}
-#obchod #upozornitZombie button {
-    background-color:rgb(183, 28, 0);
-}
-
-#obchod #upozornitDia {
-    color: aqua;
-}
-#obchod #upozornitDia Button {
-    background-color: aqua;
-}
-
 #divCheaty {
     font-size: 72px;
 }
@@ -243,7 +167,6 @@ text-shadow: 5px 5px 25px black;
 #jitDoObchodu {
     font-size: 38px;
     display:block;
-    margin: 0 auto;
     border-radius: 0.15em;
     background-color: rgb(139, 0, 182);
     color:white;
@@ -254,32 +177,33 @@ text-shadow: 5px 5px 25px black;
     right: 1%;
 }
 #Obchod {
-    margin:0 auto;
-    text-align: center;
     background-color: rgb(235, 192, 155);
+    margin-left: 15%;
+    margin-top:20px;
 }
 
 #Obchod #obchudek {
-    width:70vw;
+    width:1330px;
     border:10px solid black;
+    text-align: none;
 }
 #Obchod button {
     font-size: 150%;
-    border: 0;
     background-color: gainsboro;
     color:green;
     font-weight: 600;
     border: 5px solid black;
     position: absolute;
+    margin-left: 15%;
 }
 #vratitSe {
-    top:3%;
-    left:15.5%;
+    margin-left: 15%;
+    left:20px;
+    top:4%;
     font-size: 38px;
-    z-index: 5;
+    z-index: 1;
     background-color: rgb(0, 153, 255);
     color:white;
-    z-index: 1;
     border-radius: 0.15em;
     font-weight: 600;
     position: absolute;
@@ -299,47 +223,47 @@ text-shadow: 5px 5px 25px black;
 }
 
 #Obchod #koupitJidlo {              /*PRVNÍ POLIČKA*/
-    top:30.5%;
-    left:23.3%;
+    top:290px;
+    left:172px;
 }
 
 
 #Obchod #koupitLekarnicku {          /*PRVNÍ POLIČKA*/
-    top:30.5%;
-    left:29.7%;
+    top:290px;
+    left:300px;
 }
 
 #Obchod #koupitViceEnergie {          /*DRUHÁ POLIČKA*/
-    top:49%;
-    left:18.3%;
+    top:455px;
+    left:81px;
 }
 
 #Obchod #koupitTravu {          /*DRUHÁ POLIČKA*/
-    top:49%;
-    left:24.65%;
+    top:455px;
+    left:200px;
 }
 
 #Obchod #koupitViceZivotu {
-    top:57%;
-    left:36.4%;
+    top:530px;
+    left:425px;
 }
 
 #Obchod #koupitPolovinaEnergie {
-    top:57%;
-    left:42.5%;
+    top:530px;
+    left:540px;
 }
 
 #Obchod #koupitVicePenez {
-    top:38%;
-    left:53.2%;
+    top:355px;
+    left:742px;
 }
 
 #Obchod #koupitUpozorneniZombie {
-    top:18.5%;
-    left:58.5%;
+    top:180px;
+    left:845px;
 }
 
 #Obchod #koupitUpozorneniDia {
-    top:18.5%;
-    left:65%;
+    top:180px;
+    left:970px;
 }
