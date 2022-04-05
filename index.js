@@ -10,7 +10,7 @@ let vydelanychPenez=0;
 let mistnost = 1;
 let zivoty = 2;
 let energie = 100;
-let penize = 5000;
+let penize = 50;
 
 let odmenaZaDia=50;
 let spotrebaEnergie=5;
@@ -96,6 +96,7 @@ document.getElementById("nahrat").onclick = function() {
     if (trava==true) {
         prestan.pause();
         prestan=new Audio("TravaHudbaLepsi.mp3");
+        document.querySelector("html").style.filter = "hue-rotate(90deg)";
     }
     console.log("Save byl načat");
     AktualizujStaty();
@@ -125,6 +126,7 @@ alertByl =false;
 trava=false;
 objevenoJidlo = 0;
 cenaZaViceEnergie = 500;
+document.querySelector("html").style.filter = "hue-rotate(0deg)";
 document.getElementById("mistnostPocet").innerHTML = "Místnost č."+mistnost;
 AktualizujStaty();
 AktualizujMistnost();
