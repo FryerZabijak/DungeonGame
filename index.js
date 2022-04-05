@@ -511,4 +511,4 @@ function Konec() {
     audio.play();
     document.getElementById("jitDoObchodu").style.display="none";
 }
-}
+
