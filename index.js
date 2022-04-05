@@ -281,6 +281,7 @@ document.getElementById("koupitViceEnergie").onclick = function() {  //KOUPIT +5
         penize-=cenaZaViceEnergie;
         cenaZaViceEnergie+=250;
         maxEnergie+=50;
+        document.getElementById("koupitViceEnergie").innerHTML = "$"+cenaZaViceEnergie;
         energie=maxEnergie;
         AktualizujStaty();
         Koupeno();
