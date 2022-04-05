@@ -10,7 +10,7 @@ let vydelanychPenez=0;
 let mistnost = 1;
 let zivoty = 2;
 let energie = 100;
-let penize = 50;
+let penize = 5000;
 
 let odmenaZaDia=50;
 let spotrebaEnergie=5;
@@ -31,6 +31,10 @@ AktualizujStaty();
 mistnost=AktualizujMistnost();
 let prestan=new Audio("HudbaDoPozadi.mp3");
 
+if (projetychMistnosti>=2) {
+    NactiSave();
+    }
+
 let savyZobrazeny=false;
 document.getElementById("savy").style.display="none";
 document.getElementById("saveDisketa").onclick = function() {
@@ -46,7 +50,25 @@ document.getElementById("saveDisketa").onclick = function() {
 }
 
 document.getElementById("ulozit").onclick = function() {
-    NactiSave();
+    console.log("ukládají se údaje...");
+    localStorage.setItem("projetychMistnosti",Number(projetychMistnosti));
+    localStorage.setItem("vydelanychPenez",Number(vydelanychPenez));
+    localStorage.setItem("mistnost",Number(mistnost));
+    localStorage.setItem("zivoty",Number(zivoty));
+    localStorage.setItem("energie",Number(energie));
+    localStorage.setItem("penize",Number(penize));
+    localStorage.setItem("odmenaZaDia",Number(odmenaZaDia));
+    localStorage.setItem("spotrebaEnergie",Number(spotrebaEnergie));
+    localStorage.setItem("polovicniSpotreba",Boolean(polovicniSpotreba));
+    localStorage.setItem("maxEnergie",Number(maxEnergie));
+    localStorage.setItem("maxZivoty",Number(maxZivoty));
+    localStorage.setItem("upozorneniZombie",Boolean(upozorneniZombie));
+    localStorage.setItem("upozorneniDia",Boolean(upozorneniDia));
+    localStorage.setItem("alertByl",Boolean(alertByl));
+    localStorage.setItem("trava",Boolean(trava));
+    localStorage.setItem("objevenoJidlo",Boolean(objevenoJidlo));
+    localStorage.setItem("cenaZaViceEnergie",Number(cenaZaViceEnergie));
+    console.log("Údaje byly uloženy.");
 }
 
 document.getElementById("nahrat").onclick = function() {
@@ -246,6 +268,7 @@ document.getElementById("koupitTravu").onclick = function() {       //KOUPIT TR�
         Koupeno();
         prestan.pause();
         prestan = new Audio("TravaHudbaLepsi.mp3");
+        document.querySelector("html").style.filter = "hue-rotate(90deg)";
         if (pauza!=true) {
         prestan.play();
         prestan.volume=0.4;
@@ -351,7 +374,7 @@ document.getElementById("cheatyButton").onclick = function() {
 }
 
 document.getElementById("jitDoObchodu").onclick = function() {
-    if (trava!=true) {prestan.pause(); prestan = new Audio("HudbaObchodLepsi.mp3"); prestan.currentTime=0; prestan.volume=0.6}
+    if (trava!=true) {prestan.pause(); prestan = new Audio("hudbaObchodLepsi.mp3"); prestan.currentTime=0; prestan.volume=0.6}
     document.body.style.backgroundColor="#EBC09B";
     document.getElementById("Hra").style.display = "none";
     document.getElementById("Obchod").style.display = "block";
@@ -449,7 +472,7 @@ function KontrolaStatu() {
     if (zivoty<=0) 
     {
         Konec();
-        document.getElementById("zivotyLabel").innerHTML = 0;
+         document.getElementById("zivotyLabel").innerHTML = 0;
          document.getElementById("kopat").style.visibility="hidden";
          document.getElementById("sebrat").style.visibility="hidden";
          document.getElementById("zabit").style.visibility="hidden";
@@ -510,5 +533,4 @@ function Konec() {
     audio.volume=1;
     audio.play();
     document.getElementById("jitDoObchodu").style.display="none";
-}
 }
