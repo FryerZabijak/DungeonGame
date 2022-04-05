@@ -31,6 +31,9 @@ AktualizujStaty();
 mistnost=AktualizujMistnost();
 let prestan=new Audio("HudbaDoPozadi.mp3");
 
+if (projetychMistnosti>=2) {
+    NactiSave();
+    }
 
 let savyZobrazeny=false;
 document.getElementById("savy").style.display="none";
@@ -47,25 +50,7 @@ document.getElementById("saveDisketa").onclick = function() {
 }
 
 document.getElementById("ulozit").onclick = function() {
-    console.log("ukládají se údaje...");
-    localStorage.setItem("projetychMistnosti",Number(projetychMistnosti));
-    localStorage.setItem("vydelanychPenez",Number(vydelanychPenez));
-    localStorage.setItem("mistnost",Number(mistnost));
-    localStorage.setItem("zivoty",Number(zivoty));
-    localStorage.setItem("energie",Number(energie));
-    localStorage.setItem("penize",Number(penize));
-    localStorage.setItem("odmenaZaDia",Number(odmenaZaDia));
-    localStorage.setItem("spotrebaEnergie",Number(spotrebaEnergie));
-    localStorage.setItem("polovicniSpotreba",Boolean(polovicniSpotreba));
-    localStorage.setItem("maxEnergie",Number(maxEnergie));
-    localStorage.setItem("maxZivoty",Number(maxZivoty));
-    localStorage.setItem("upozorneniZombie",Boolean(upozorneniZombie));
-    localStorage.setItem("upozorneniDia",Boolean(upozorneniDia));
-    localStorage.setItem("alertByl",Boolean(alertByl));
-    localStorage.setItem("trava",Boolean(trava));
-    localStorage.setItem("objevenoJidlo",Boolean(objevenoJidlo));
-    localStorage.setItem("cenaZaViceEnergie",Number(cenaZaViceEnergie));
-    console.log("Údaje byly uloženy.");
+    NactiSave();
 }
 
 document.getElementById("nahrat").onclick = function() {
@@ -524,6 +509,33 @@ function HudbaDoPozadi() {
     return audio;
 }
 
+function NactiSave() {
+        console.log("Načítá se save...");
+    projetychMistnosti=Number(localStorage.getItem("projetychMistnosti"));
+    vydelanychPenez=Number(localStorage.getItem("vydelanychPenez"));
+    mistnost=Number(localStorage.getItem("mistnost"));
+    zivoty=Number(localStorage.getItem("zivoty"));
+    energie=Number(localStorage.getItem("energie"));
+    penize=Number(localStorage.getItem("penize"));
+    odmenaZaDia=Number(localStorage.getItem("odmenaZaDia"));
+    spotrebaEnergie=Number(localStorage.getItem("spotrebaEnergie"));
+    polovicniSpotreba=Boolean(localStorage.getItem("polovicniSpotreba"));
+    maxEnergie=Number(localStorage.getItem("maxEnergie"));
+    maxZivoty=Number(localStorage.getItem("maxZivoty"));
+    upozorneniZombie=Boolean(localStorage.getItem("upozorneniZombie") == "true");
+    console.log(upozorneniZombie+" bylo načteno");
+    upozorneniDia=Boolean(localStorage.getItem("upozorneniDia")=="true");
+    console.log(upozorneniDia +" bylo načteno");
+    alertByl=Boolean(localStorage.getItem("alertByl")== "true");
+    trava=Boolean(localStorage.getItem("trava")== "true");
+    objevenoJidlo=Boolean(localStorage.getItem("objevenoJidlo")== "true");
+    cenaZaViceEnergie=Number(localStorage.getItem("cenaZaViceEnergie"));
+    document.getElementById("mistnostPocet").innerHTML="Místnost č."+projetychMistnosti;
+    if (trava==true) {
+        prestan.pause();
+        prestan=new Audio("TravaHudbaLepsi.mp3");
+    }
+    
 function Konec() {
     let audio = new Audio("konec.mp3");
     audio.volume=1;
