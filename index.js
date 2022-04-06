@@ -81,7 +81,7 @@ document.getElementById("nahrat").onclick = function() {
     penize=Number(localStorage.getItem("penize"));
     odmenaZaDia=Number(localStorage.getItem("odmenaZaDia"));
     spotrebaEnergie=Number(localStorage.getItem("spotrebaEnergie"));
-    polovicniSpotreba=Boolean(localStorage.getItem("polovicniSpotreba"));
+    polovicniSpotreba=Boolean(localStorage.getItem("polovicniSpotreba")=="true");
     maxEnergie=Number(localStorage.getItem("maxEnergie"));
     maxZivoty=Number(localStorage.getItem("maxZivoty"));
     upozorneniZombie=Boolean(localStorage.getItem("upozorneniZombie") == "true");
