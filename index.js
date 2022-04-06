@@ -101,6 +101,7 @@ document.getElementById("nahrat").onclick = function() {
     }
     console.log("Save byl načat");
     AktualizujStaty();
+    AktualizujMistnost();
 }
 
 document.getElementById("restart").onclick = function() {
