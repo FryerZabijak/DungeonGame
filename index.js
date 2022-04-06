@@ -93,6 +93,7 @@ document.getElementById("nahrat").onclick = function() {
     objevenoJidlo=Boolean(localStorage.getItem("objevenoJidlo")== "true");
     cenaZaViceEnergie=Number(localStorage.getItem("cenaZaViceEnergie"));
     document.getElementById("mistnostPocet").innerHTML="Místnost č."+projetychMistnosti;
+        document.getElementById("koupitViceEnergie").innerHTML="$"+cenaZaViceEnergie;
     console.log("poloviční spotřeba je:"+polovicniSpotreba);
     if (trava==true) {
         prestan.pause();
