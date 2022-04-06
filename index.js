@@ -376,7 +376,7 @@ document.getElementById("cheatyButton").onclick = function() {
 }
 
 document.getElementById("jitDoObchodu").onclick = function() {
-    if (trava!=true) {prestan.pause(); prestan = new Audio("hudbaObchodLepsi.mp3"); prestan.currentTime=0; prestan.volume=0.6}
+    if (trava!=true) {prestan.pause(); prestan = new Audio("HudbaObchodLepsi.mp3"); prestan.currentTime=0; prestan.volume=0.6}
     document.body.style.backgroundColor="#EBC09B";
     document.getElementById("Hra").style.display = "none";
     document.getElementById("Obchod").style.display = "block";
