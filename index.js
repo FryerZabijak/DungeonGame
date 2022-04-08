@@ -297,7 +297,7 @@ document.getElementById("koupitViceEnergie").onclick = function() {  //KOUPIT +5
     }
 }
 
-document.getElementById("koupitViceZivotu").onclick = function() {  //KOUPIT +50 ŽIVOTŮ $750
+document.getElementById("koupitViceZivotu").onclick = function() {  //KOUPIT +1 ŽIVOT $750
     if (penize>=750) {
         penize-=750;
         maxZivoty+=1;
@@ -435,16 +435,17 @@ function AktualizujMistnost() {
     var randomCislo = VygenerujRandomCislo(3);
     console.log("Program vygeneroval místnost č."+mistnost);
     if (mistnost<=5) {
-
         if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/PrázdnáMístnost_01.png";
         else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/PrázdnáMístnost_02.png";
         else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/PrázdnáMístnost_03.png";
         console.log("Objevila se prázdná místnost");
     }
     else if (mistnost==6) {
+        if (trava!=true) {
         if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/Zombie_01.png";
         else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/Zombie_02.png";
         else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/Zombie_03.png";
+        }
         if(trava==true) {
             if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/ZombieTráva_01.png";
             else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/ZombieTráva_02.png";
@@ -453,9 +454,11 @@ function AktualizujMistnost() {
         console.log("Objevil se Zombie");
     }
     else if (mistnost==7){
+        if (trava!=true) {
         if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/Diamant_01.png";
         else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/Diamant_02.png";
         else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/Diamant_03.png";
+        }
         if(trava==true) {
             if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/DiamantTráva_01.png";
             else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/DiamantTráva_02.png";
