@@ -429,40 +429,40 @@ function AktualizujMistnost() {                                         //MĚNĚ
     if (energie<=15 && penize<100 && objevenoJidlo<2) {                 //POKUD MAŠ MALO ENERGIE, MALO PENĚZ, A MÉNĚ NEŽ 2X SI OBJEVIL JÍDLO, TAK DOSTANEŠ JIDLO
         mistnost=8;
         console.log("Objevilo se jídlo.")
-        hlavniObrazek.src="/Nová Grafika/Maso_01.png";
+        hlavniObrazek.src="Nová Grafika/Maso_01.png";
         objevenoJidlo+=1;
     }
     var randomCislo = VygenerujRandomCislo(3);  
     console.log("Program vygeneroval místnost č."+mistnost);
     if (mistnost<=5) {                                                  //PRÁZDNÁ MÍSTNOST, VÝBĚR TYPU MÍSTNOSTI
-        if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/PrázdnáMístnost_01.png";
-        else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/PrázdnáMístnost_02.png";
-        else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/PrázdnáMístnost_03.png";
+        if (randomCislo==1) hlavniObrazek.src="Nová Grafika/PrázdnáMístnost_01.png";
+        else if (randomCislo==2) hlavniObrazek.src="Nová Grafika/PrázdnáMístnost_02.png";
+        else if (randomCislo==3) hlavniObrazek.src="Nová Grafika/PrázdnáMístnost_03.png";
         console.log("Objevila se prázdná místnost");
     }
     else if (mistnost==6) {                                             //ZOMBIE, VÝBĚR TYPU MÍSTNOSTI
         if (trava!=true) {                                              //POKUD NENÍ TRÁVA, NORMALNI ZOMBCI
-        if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/Zombie_01.png";
-        else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/Zombie_02.png";
-        else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/Zombie_03.png";
+        if (randomCislo==1) hlavniObrazek.src="Nová Grafika/Zombie_01.png";
+        else if (randomCislo==2) hlavniObrazek.src="Nová Grafika/Zombie_02.png";
+        else if (randomCislo==3) hlavniObrazek.src="Nová Grafika/Zombie_03.png";
         }
         if(trava==true) {                                               //POKUD TRÁVA JE TAK TRÁVA ZOMBÍCI
-            if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/ZombieTráva_01.png";
-            else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/ZombieTráva_02.png";
-            else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/ZombieTráva_03.png";
+            if (randomCislo==1) hlavniObrazek.src="Nová Grafika/ZombieTráva_01.png";
+            else if (randomCislo==2) hlavniObrazek.src="Nová Grafika/ZombieTráva_02.png";
+            else if (randomCislo==3) hlavniObrazek.src="Nová Grafika/ZombieTráva_03.png";
         }
         console.log("Objevil se Zombie");
     }
     else if (mistnost==7){                                              //DIAMANT
         if (trava!=true) {                                              //POKUD NENI TRAVA, NORMALNI DIAMANT
-        if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/Diamant_01.png";
-        else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/Diamant_02.png";
-        else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/Diamant_03.png";
+        if (randomCislo==1) hlavniObrazek.src="Nová Grafika/Diamant_01.png";
+        else if (randomCislo==2) hlavniObrazek.src="Nová Grafika/Diamant_02.png";
+        else if (randomCislo==3) hlavniObrazek.src="Nová Grafika/Diamant_03.png";
         }
         if(trava==true) {                                               //POKUD SI SJETEJ, TAK DOBRY DIAMANT
-            if (randomCislo==1) hlavniObrazek.src="/Nová Grafika/DiamantTráva_01.png";
-            else if (randomCislo==2) hlavniObrazek.src="/Nová Grafika/DiamantTráva_02.png";
-            else if (randomCislo==3) hlavniObrazek.src="/Nová Grafika/DiamantTráva_03.png";
+            if (randomCislo==1) hlavniObrazek.src="Nová Grafika/DiamantTráva_01.png";
+            else if (randomCislo==2) hlavniObrazek.src="Nová Grafika/DiamantTráva_02.png";
+            else if (randomCislo==3) hlavniObrazek.src="Nová Grafika/DiamantTráva_03.png";
         }
         console.log("Objevil se Diamant");
     }
