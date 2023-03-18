@@ -14,11 +14,14 @@ DungeonGame je textová RPG hra postavená pomocí HTML, CSS a Javascriptu. Hra 
 - Možnost zálohovat a obnovit postup hry do posledního kontrolního bodu.
 
 ## Ovládání hry
-Tlačítko `Sebrat`: Sebere předměty v aktuální místnosti.
-Tlačítko `Kopat`: Hledá předměty v aktuální místnosti.
-Tlačítko `Zabit`: Útočí na nepřátele v aktuální místnosti.
-Tlačítko `Jít do Obchodu`: Vezme vás do herního obchodu, kde si můžete kupovat předměty za herní měnu.
-Tlačítko `Vrátit se do dolu`: Vrátí vás zpět do herního světa po návštěvě herního obchodu.
+- Tlačítko `Sebrat`: Sebere předměty v aktuální místnosti.
+- Tlačítko `Kopat`: Hledá předměty v aktuální místnosti.
+- Tlačítko `Zabit`: Útočí na nepřátele v aktuální místnosti.
+- Tlačítko `Jít do Obchodu`: Vezme vás do herního obchodu, kde si můžete kupovat předměty za herní měnu.
+- Tlačítko `Vrátit se do dolu`: Vrátí vás zpět do herního světa po návštěvě herního obchodu.
 
 ## Autoři
 DungeonGame vytvořil Pepa pomocí HTML, CSS a Javascriptu. Hra je zdarma k hraní a k dispozici na Githubu.
+
+## Screenshot
+![Screenshot hry DungeonGame](https://raw.githubusercontent.com/FryerZabijak/DungeonGame/main/fryerzabijak.github.io_DungeonGame.png)
