@@ -21,7 +21,7 @@ DungeonGame je textová RPG hra postavená pomocí HTML, CSS a Javascriptu. Hra 
 - Tlačítko `Vrátit se do dolu`: Vrátí vás zpět do herního světa po návštěvě herního obchodu.
 
 ## Autoři
-DungeonGame vytvořil Pepa pomocí HTML, CSS a Javascriptu. Hra je zdarma k hraní a k dispozici na [Githubu](https://pepamraz.github.io/DungeonGame/).
+DungeonGame vytvořil Pepa pomocí HTML, CSS a Javascriptu. Hra je zdarma k hraní a k dispozici na [této stránce](https://pepamraz.github.io/DungeonGame/).
 
 ## Screenshot
 ![Screenshot hry DungeonGame](https://raw.githubusercontent.com/FryerZabijak/DungeonGame/main/fryerzabijak.github.io_DungeonGame.png)
